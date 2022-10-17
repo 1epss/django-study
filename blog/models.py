@@ -7,6 +7,8 @@ class Post(models.Model):
     content = models.TextField()
 
     head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d/', blank=True)
+    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)     # auto_now_add = True 는 레코드가 생성될 때 현재 시각이 자동으로 저장
     updated_at = models.DateTimeField(auto_now=True)         # auto_now = True 는 다시 저장할 때 마다 그 시각이 저장
     # author : 추후 작성 예정
